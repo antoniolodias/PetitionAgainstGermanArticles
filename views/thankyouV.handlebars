@@ -1,0 +1,23 @@
+<div id="header">
+    <p class="titles">Thank you for being with us!</p>
+        <a href="/signers"><p class="texts">We are not alone{{totalSigners}}</p></a>
+
+</div>
+
+
+<img id="signatureImg" src="{{sig}}">
+
+
+<a href="/edit_profile"><button id= "updateProfile">Update Profile</button></a>
+
+<form method="POST">
+    <input type="hidden" name="sig" value="">
+    <input type="hidden" name="_csrf" value="{{csrfToken}}">
+
+    <button id= "deleteSignaturedButton">Delete signature</button>
+<form>
+</br>
+    <button><a href="/logout">Logout</a></button>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="/script.js"></script>

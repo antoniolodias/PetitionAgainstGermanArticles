@@ -1,0 +1,23 @@
+<div id="header">
+    <p class="titles">What's with the articles Germany?</p>
+    <p class="texts">There are too many of them...</p>
+    <p class="textsSmall">If you agree sign our petition bellow and together we will make them go away</p>
+</div>
+
+    <form Method="POST">
+        <div id="pageBody">
+            {{#if error}}
+                <h2>{{> registrationErrorP}}</h2>
+            {{/if}}
+            <input type="hidden" name="signature" value="">
+
+                <canvas id="canvas" width="560" height="300"></canvas>
+
+            <div class="canvasButton">
+                <button >SUBMIT</button>
+            </div>
+
+            <input type="hidden" name="_csrf" value="{{csrfToken}}">
+    </form>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="/canvas.js"></script>

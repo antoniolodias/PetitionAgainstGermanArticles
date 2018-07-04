@@ -1,0 +1,19 @@
+<div id="header">
+    <p class="titles">Tell us about yourself</p>
+</div>
+
+    <form Method="POST">
+        <div id="pageBody">
+
+            <input type="hidden" name="signature" value="">
+            <input class="profileInput" type="text" name="age" autocomplete="off" placeholder="Age"value="">
+            <input class="profileInput" type="text" name="city" autocomplete="off" placeholder="City"value="">
+            <input class="profileInput" type="text" name="homepage" autocomplete="off" placeholder="Homepage"value="">
+
+            <div id="buttons">
+                <button id= "profileButton">CONTINUE</button>
+            </div>
+
+            <input type="hidden" name="_csrf" value="{{csrfToken}}">
+        </div>
+    </form>

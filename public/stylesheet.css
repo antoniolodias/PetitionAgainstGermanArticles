@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background-image: url("/wall2.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+#views {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    width: 37%;
+    height: 100%;
+}
+
+#header {
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: 22%;
+    display: block;
+}
+
+#pageBody {
+    position: relative;
+    top: 0;
+    height: 60%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#buttons {
+    position: relative;
+    bottom: 0;
+    height: 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+canvas {
+    position: relative;
+    top: 120px;
+}
+
+#signatureImg {
+    position: relative;
+    left: 4px;
+    margin-top: 120px;
+}
+
+input {
+    background-color: transparent;
+    font-family: arial;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    margin-top: 10px;
+}
+input:hover {
+    font-weight: bold;
+}
+input.middle:focus {
+    outline-width: 0;
+}
+
+button {
+    background-color: transparent;
+    font-family: arial;
+    font-size: 25px;
+    color: white;
+    margin-top: 10px;
+}
+button:hover {
+    font-weight: bold;
+}
+
+.canvasButton {
+    position: relative;
+    top: 120px;
+    height: 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titles {
+    position: relative;
+    top: 50px;
+    font-family: "arial black";
+    font-size: 45px;
+    color: white;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.texts {
+    position: relative;
+    top: 70px;
+    font-family: arial;
+    font-size: 25px;
+    color: white;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.textsSmall {
+    position: relative;
+    top: 80px;
+    font-family: arial;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+}
+
+::placeholder {
+    color: white;
+    text-align: center;
+}
+
+a:link {
+    color: white;
+    text-decoration: none;
+}
+
+a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#error {
+    position: fixed;
+    top: 0;
+    font-family: arial;
+    font-size: 20px;
+    color: white;
+    background-color: black;
+    text-align: center;
+}

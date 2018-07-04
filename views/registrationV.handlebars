@@ -1,0 +1,24 @@
+<div id="header">
+    <p class="titles">Welcome to our page</p>
+    <p class="texts">Feel free to join us registering below</p>
+</div>
+
+    <form Method="POST">
+        <div id="pageBody">
+            {{#if error}}
+                <h2>{{> registrationErrorP}}</h2>
+            {{/if}}
+            <input type="hidden" name="signature" value="">
+            <input class="registrationInput" type="text" name="first" placeholder="First Name"value="">
+            <input class="registrationInput" type="text" name="last" placeholder="Last Name"value="">
+            <input class="registrationInput" type="email" name="email" placeholder="Email"value="">
+            <input class="registrationInput" type="password" name="password" placeholder="Password"value="">
+
+            <div id="buttons">
+                <button id= "register">REGISTER</button>
+                <button id= "login"><a href="/login">LOGIN</a></button>
+            </div>
+
+            <input type="hidden" name="_csrf" value="{{csrfToken}}">
+        </div>
+    </form>

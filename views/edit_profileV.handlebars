@@ -1,0 +1,23 @@
+<div id="header">
+    <p class="titles">Feel free to update your profile</p>
+</div>
+
+<form Method="POST">
+    <div id="pageBody">
+
+            <input class="profileInput" type="text" name="first" placeholder="First Name" value="{{first}}">
+            <input class="profileInput" type="text" name="last" placeholder="Last Name" value="{{last}}">
+            <input class="profileInput" type="text" name="email" placeholder="Email" value="{{email}}">
+
+            <input class="profileInput" type="password" name="password" placeholder="Password" value="">
+
+            <input class="profileInput" type="text" name="age" placeholder="Age" value="{{age}}">
+            <input class="profileInput" type="text" name="city" placeholder="city" value="{{city}}">
+            <input class="profileInput" type="text" name="homepage" placeholder="Homepage" value="{{url}}">
+
+            <input type="hidden" name="sig" value="">
+            <button id= "updateButton">UPDATE</button>
+
+            <input type="hidden" name="_csrf" value="{{csrfToken}}">
+    </div>
+</form>

@@ -1,0 +1,20 @@
+<div id="header">
+    <p class="titles">Login</p>
+</div>
+
+<form Method="POST">
+    {{#if error}}
+    <h2>{{> registrationErrorP}}</h2>
+    {{/if}}
+
+<div id="pageBody">
+    <input class="registrationInput" type="text" name="email" placeholder="Email"value="">
+    <input class="registrationInput" type="password" name="password" placeholder="Password"value="">
+</div>
+
+<div id="buttons">
+    <button id= "login">LOGIN</button>
+
+    <input type="hidden" name="_csrf" value="{{csrfToken}}">
+</div>
+</form>

@@ -1,0 +1,21 @@
+<div id="header">
+    <p class="titles">Thank you all for signing</p>
+    <p class="texts">Spread the word</p>
+</div>
+
+<div id="pageBody">
+    {{#signersArray}}
+
+        <a href="{{url}}" target="_blank"><p class="textsSmall">{{first}} {{last}} {{age}} {{city}}</p></a>
+    {{/signersArray}}
+
+</div>
+
+<form method="POST">
+    <input type="hidden" name="sig" value="">
+    <input type="hidden" name="_csrf" value="{{csrfToken}}">
+    <button><a href="/logout">Logout</a></button>
+<form>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="/script.js"></script>

@@ -12,8 +12,9 @@
     });
 
     canvas.on("mouseup", () => {
+        console.log("mouseup works ");
         signing = false;
-        var data = document.getElementById("canvas").toDataURL();
+        var data = document.getElementById("canvas").toDataURL(); //gets the URL from the signature and inserts it into the hidden input field
         $("input[name=signature]").val(data);
     });
 

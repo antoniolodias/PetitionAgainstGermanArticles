@@ -8,7 +8,7 @@ exports.hashPassword = function(plainTextPassword) {
             if (err) {
                 return reject(err);
             }
-            console.log(salt);
+            // console.log(salt);
             bcrypt.hash(plainTextPassword, salt, function(err, hash) {
                 if (err) {
                     return reject(err);

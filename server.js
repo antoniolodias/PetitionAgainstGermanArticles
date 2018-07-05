@@ -3,9 +3,7 @@ const app = express();
 const handlebars = require("express-handlebars");
 const csurf = require("csurf");
 const bodyParser = require("body-parser");
-
 const cookieParser = require("cookie-parser");
-
 var cookieSession = require("cookie-session");
 var bcrypt = require("bcryptjs");
 
@@ -87,6 +85,7 @@ app.post("/registration", (req, res) => {
             res.redirect("/profile");
         })
         .catch(err => {
+            console.log(err);
             res.render("registrationV", {
                 layout: "petitionLayout",
                 error: "error"
@@ -122,8 +121,8 @@ app.post("/login", (req, res) => {
                 throw new Error("Incorrect password");
             }
         })
-
         .catch(err => {
+            console.log(err);
             res.render("loginV", {
                 layout: "petitionLayout",
                 error: "error"
@@ -146,12 +145,12 @@ app.post("/profile", (req, res) => {
         req.body.age,
         req.body.city,
         req.body.homepage
-        // req.session.userId
     )
         .then(() => {
             res.redirect("/petition");
         })
         .catch(err => {
+            console.log(err);
             res.render("profileV", {
                 layout: "petitionLayout",
                 error: "error"
@@ -187,9 +186,14 @@ app.post("/edit_profile", (req, res) => {
                 )
             ])
                 .then(function([data1, data2]) {
+
                     res.redirect("/thankyou");
                 })
                 .catch(err => {
+                    console.log(
+                        "couldnt update profile users with pass: ",
+                        err
+                    );
                     res.render("edit_profileV", {
                         layout: "petitionLayout",
                         error: "error"
@@ -215,6 +219,7 @@ app.post("/edit_profile", (req, res) => {
                 res.redirect("/thankyou");
             })
             .catch(err => {
+                console.log("couldnt update profile users with NO pass: ", err);
                 res.render("edit_profileV", {
                     layout: "petitionLayout",
                     error: "error"
@@ -242,11 +247,13 @@ app.post("/petition", requireNoSignature, (req, res) => {
         req.body.signature
     )
         .then(sigId => {
+            console.log("Results from our query: ", sigId);
             req.session.sigId = sigId;
 
             res.redirect("/thankyou");
         })
         .catch(err => {
+            console.log(err);
             res.render("petitionV", {
                 layout: "petitionLayout",
                 error: "error"
@@ -255,7 +262,6 @@ app.post("/petition", requireNoSignature, (req, res) => {
 });
 //-----------------------------
 app.get("/thankyou", requireUserId, (req, res) => {
-
     getSignatureById(req.session.sigId)
         .then(userSignature => {
             res.render("thankyouV", {
@@ -294,7 +300,7 @@ app.get("/signers/:city", function(req, res) {
 //-----------------------------
 app.get("/logout", function(req, res) {
     req.session = null;
-    res.redirect("/login"); //
+    res.redirect("/login");
 });
 //-----------------------------
 app.get("*", function(req, res) {

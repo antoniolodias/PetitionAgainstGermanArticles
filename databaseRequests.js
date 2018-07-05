@@ -7,7 +7,7 @@ var db = spicedPg(
 
 exports.registration = function(first, last, email, hashpassword) {
     return db.query(
-        "INSERT INTO users (first, last, email, hashpassword) VALUES ($1, $2, $3, $4) RETURNING id,first,last",
+        "INSERT INTO users (first, last, email, hashpassword) VALUES ($1, $2, $3, $4) RETURNING id,first,last", //code it against sequel injections
         [first, last, email, hashpassword]
     );
 };
@@ -15,7 +15,7 @@ exports.registration = function(first, last, email, hashpassword) {
 exports.signing = function(user_id, signature) {
     return db
         .query(
-            "INSERT INTO signatures (user_id, signature) VALUES ($1, $2) RETURNING id",
+            "INSERT INTO signatures (user_id, signature) VALUES ($1, $2) RETURNING id", //code it against sequel injections
             [user_id, signature]
         )
         .then(function(results) {

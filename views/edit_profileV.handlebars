@@ -1,20 +1,31 @@
 <div id="header">
     <p class="titles">Feel free to update your profile</p>
+    <!-- <p class="profileText">change and press update</p> -->
 </div>
 
 <form Method="POST">
     <div id="pageBody">
 
+            <!-- {{#usersRegistration}} -->
+
+            <!-- <p>first</p> -->
             <input class="profileInput" type="text" name="first" placeholder="First Name" value="{{first}}">
+            <!-- <p>last</p> -->
             <input class="profileInput" type="text" name="last" placeholder="Last Name" value="{{last}}">
+            <!-- <p>email</p> -->
             <input class="profileInput" type="text" name="email" placeholder="Email" value="{{email}}">
 
+            <!-- <p>Password</p> -->
             <input class="profileInput" type="password" name="password" placeholder="Password" value="">
 
+            <!-- <p>Age</p> -->
             <input class="profileInput" type="text" name="age" placeholder="Age" value="{{age}}">
+            <!-- <p>City</p> -->
             <input class="profileInput" type="text" name="city" placeholder="city" value="{{city}}">
+            <!-- <p>Homepage</p> -->
             <input class="profileInput" type="text" name="homepage" placeholder="Homepage" value="{{url}}">
 
+            <!-- {{/usersRegistration}} -->
             <input type="hidden" name="sig" value="">
             <button id= "updateButton">UPDATE</button>
 

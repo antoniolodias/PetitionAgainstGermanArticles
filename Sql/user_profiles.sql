@@ -7,3 +7,7 @@ CREATE TABLE user_profiles(
     city VARCHAR(200),
     url VARCHAR(200)
 );
+
+-- createdb DataBaseName
+-- DONT FORGET psql -d petition -f Sql/user_profiles.sql
+-- INSIDE THE DATABASE psql -d petition

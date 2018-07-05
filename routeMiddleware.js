@@ -16,6 +16,7 @@ exports.requireSignature = function(req, res, next) {
 
 exports.requireUserId = function(req, res, next) {
     if (!req.session.userId) {
+
         res.redirect("/registration");
     } else {
         next();
